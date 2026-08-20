@@ -20,7 +20,7 @@
    ========================================================================== */
 
 const friends = [
-  { name: "Sanjay Das", stream: "Computer Science & Engineering", birthday: "2007-08-22", image: "1.jpeg", about: "Loves late-night coding sessions and always ready to debug a tricky problem." },
+  { name: "Sanjay Das", stream: "Computer Science & Engineering", birthday: "2007-08-25", image: "1.jpeg", about: "Loves late-night coding sessions and always ready to debug a tricky problem." },
   { name: "Friend 02", stream: "Information Technology", birthday: "2004-04-22", image: "images/friend02.jpg", about: "The trip planner of the group — always finding the next adventure." },
   { name: "Friend 03", stream: "Electronics & Communication Engineering", birthday: "2003-01-19", image: "images/friend03.jpg", about: "Known for epic dance moves and infectious laughter at every gathering." },
   { name: "Friend 04", stream: "Electrical Engineering", birthday: "2004-01-26", image: "images/friend04.jpg", about: "Our go-to person for exam-time notes and last-minute doubts." },
