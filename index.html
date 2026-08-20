@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Friends Birthday Countdown 🎂</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+<link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ LOADING SCREEN ============ -->
+<div id="loadingScreen">
+  <div class="loader-content">
+   
+    <div class="loader-cake">🎂</div>
+    <div class="loader-ring"></div>
+    <p>Loading Birthday Magic...</p>
+  </div>
+</div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">🎉 <span>GMIT COLLEGE FRIENDS' BIRTHDAY</span></div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#friends">Friends</a></li>
+      <li><a href="#upcoming">Upcoming</a></li>
+      <li><a href="#memories">Memories</a></li>
+      <li><a href="#journey">Journey</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button id="musicToggle" class="icon-btn" title="Toggle Music"><i class="fa-solid fa-music"></i></button>
+      <button id="themeToggle" class="icon-btn" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      <button id="hamburgerBtn" class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO SECTION ============ -->
+<section id="home" class="hero">
+  <div class="hero-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+  </div>
+
+  <div class="hero-content">
+    <h1 class="hero-title" style="color: #ffffff; text-shadow: 2px 6px 6px rgba(0,0,0,0,);"> GMIT FRIENDS' BIRTHDAY COUNTDOWN</h1>
+    <p class="hero-subtitle" style="color:#ffffff;text-shadow: 2px 2px 6px rgba(0,0,0,0,); font-size: 25px;"><b>.</b></p>
+
+    <div class="hero-countdown-card glass">
+      <img id="heroPhoto" class="hero-photo" src="" alt="Next birthday friend">
+      <h3 id="heroFriendName">Loading...</h3>
+
+      <div id="heroCountdownWrap" class="countdown-timer">
+        <div class="cd-unit"><span class="cd-num" id="heroDays">00</span><span class="cd-label">Days</span></div>
+        <div class="cd-unit"><span class="cd-num" id="heroHours">00</span><span class="cd-label">Hours</span></div>
+        <div class="cd-unit"><span class="cd-num" id="heroMinutes">00</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-unit"><span class="cd-num" id="heroSeconds">00</span><span class="cd-label">Seconds</span></div>
+      </div>
+
+      <p id="heroCelebrateMsg" class="hero-celebrate hidden" style="color: black;">🎉 The celebration is happening today!</p>
+    </div>
+
+    <a href="#friends" class="scroll-hint"><i class="fa-solid fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- ============ STATS SECTION ============ -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-card glass">
+      <i class="fa-solid fa-users"></i>
+      <h3 id="statTotal">0</h3>
+      <p>Total Friends</p>
+    </div>
+    <div class="stat-card glass">
+      <i class="fa-solid fa-cake-candles"></i>
+      <h3 id="statUpcoming">0</h3>
+      <p>Birthdays in 30 Days</p>
+    </div>
+    <div class="stat-card glass">
+      <i class="fa-solid fa-champagne-glasses"></i>
+      <h3 id="statToday">0</h3>
+      <p>Birthdays Today</p>
+    </div>
+    <div class="stat-card glass">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3 id="statTopStream">-</h3>
+      <p>Most Common Stream</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIRTHDAY TODAY ============ -->
+<section id="today" class="today-section">
+  <h2 class="section-title" style="color: red;">🎉 Birthday Today</h2>
+  <div id="todayContainer" class="today-container"></div>
+</section>
+
+<!-- ============ UPCOMING BIRTHDAYS ============ -->
+<section id="upcoming" class="upcoming-section">
+  <h2 class="section-title">🎂 Upcoming Birthdays</h2>
+  <div id="upcomingContainer" class="upcoming-list"></div>
+</section>
+
+<!-- ============ FRIENDS SECTION ============ -->
+<section id="friends" class="friends-section">
+  <h2 class="section-title">Meet My Friends 👨‍💻👩‍💻</h2>
+
+  <div class="controls-section">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="Search your friend...">
+    </div>
+
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-stream="All">All</button>
+      <button class="filter-btn" data-stream="Computer Science &amp; Engineering">CSE</button>
+      <button class="filter-btn" data-stream="Information Technology">IT</button>
+      <button class="filter-btn" data-stream="Electronics &amp; Communication Engineering">ECE</button>
+      <button class="filter-btn" data-stream="Electrical Engineering">EE</button>
+      <button class="filter-btn" data-stream="Mechanical Engineering">ME</button>
+      <button class="filter-btn" data-stream="Civil Engineering">CE</button>
+      <button class="filter-btn" data-stream="Other">Other</button>
+    </div>
+
+    <select id="sortSelect" class="sort-select">
+      <option value="default">Sort: Default</option>
+      <option value="nameAsc">Name A-Z</option>
+      <option value="nameDesc">Name Z-A</option>
+      <option value="upcoming">Upcoming Birthday</option>
+      <option value="stream">Engineering Stream</option>
+    </select>
+  </div>
+
+  <div id="friendsGrid" class="friends-grid"></div>
+
+  <div class="fun-actions">
+    <button id="randomBtn" class="fun-btn">🎲 Pick a Random Friend</button>
+    <button id="surpriseBtn" class="fun-btn surprise">✨ Surprise Me</button>
+  </div>
+</section>
+
+<!-- ============ MEMORIES / GALLERY ============ -->
+<section id="memories" class="memories-section">
+  <h2 class="section-title">📸 Our Memories</h2>
+  <p class="section-note">Replace the image links below in index.html with your own group photos.</p>
+
+  <!-- 🔧 REPLACE THESE PLACEHOLDER IMAGE URLS WITH YOUR OWN PHOTOS -->
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-item"><img src="[picsum.photos](https://picsum.photos/seed/memory1/500/400)" alt="Memory 1"></div>
+    <div class="gallery-item"><img src="[picsum.photos](https://picsum.photos/seed/memory2/500/400)" alt="Memory 2"></div>
+    <div class="gallery-item"><img src="[picsum.photos](https://picsum.photos/seed/memory3/500/400)" alt="Memory 3"></div>
+    <div class="gallery-item"><img src="[picsum.photos](https://picsum.photos/seed/memory4/500/400)" alt="Memory 4"></div>
+    <div class="gallery-item"><img src="[picsum.photos](https://picsum.photos/seed/memory5/500/400)" alt="Memory 5"></div>
+    <div class="gallery-item"><img src="[picsum.photos](https://picsum.photos/seed/memory6/500/400)" alt="Memory 6"></div>
+    <div class="gallery-item"><img src="[picsum.photos](https://picsum.photos/seed/memory7/500/400)" alt="Memory 7"></div>
+    <div class="gallery-item"><img src="[picsum.photos](https://picsum.photos/seed/memory8/500/400)" alt="Memory 8"></div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE / JOURNEY ============ -->
+<section id="journey" class="timeline-section">
+  <h2 class="section-title">❤️ Our Journey</h2>
+
+  <!-- 🔧 EDIT YOUR FRIENDSHIP TIMELINE HERE -->
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">2022</div>
+      <div class="timeline-content glass"><p>We first met</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2023</div>
+      <div class="timeline-content glass"><p>First college trip</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-content glass"><p>Created unforgettable memories</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-content glass"><p>More adventures</p></div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-content glass"><p>Still together ❤️</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>Made with ❤️ for the best 50 people I know.</p>
+</footer>
+
+<!-- ============ FRIEND PROFILE MODAL ============ -->
+<div id="friendModal" class="modal-overlay">
+  <div class="modal-content glass">
+    <button id="modalClose" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+    <img id="modalImage" class="modal-photo" src="" alt="">
+    <h2 id="modalName"></h2>
+    <p id="modalStream" class="modal-meta"></p>
+    <p id="modalBirthday" class="modal-meta"></p>
+    <div id="modalStatus"></div>
+    <div id="modalCountdown" class="countdown-mini"></div>
+    <div class="modal-about">
+      <h4>About</h4>
+      <p id="modalAbout"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ GALLERY LIGHTBOX ============ -->
+<div id="lightbox" class="lightbox-overlay">
+  <button id="lightboxClose" class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- ============ SURPRISE ME OVERLAY ============ -->
+<div id="surpriseOverlay" class="surprise-overlay">
+  <div class="surprise-content glass">
+    <button id="surpriseClose" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+    <img id="surprisePhoto" src="" alt="">
+    <h2 id="surpriseMessage"></h2>
+  </div>
+</div>
+
+<!-- ============ CONFETTI CONTAINER ============ -->
+<div id="confettiContainer" class="confetti-container"></div>
+
+<!-- ============ BACK TO TOP ============ -->
+<button id="backToTopBtn" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- 🔧 REPLACE music/birthday.mp3 WITH YOUR OWN AUDIO FILE -->
+<audio id="bgMusic" loop preload="none" src="music/birthday.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
